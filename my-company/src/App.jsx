@@ -37,10 +37,12 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import Service from './Service';
+import Navbar from './Navbar';
 
 const App = () => {
   return (
     <BrowserRouter>
+    <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
