@@ -5,6 +5,7 @@ const Navbar = () => {
   return (
     <nav>
       <ul>
+      style={{ display: 'flex', margin: '10px 0',backgroundColor: 'blue', justifyContent:'centre' }}
         <li>
           <Link to="/">Home</Link>
         </li>
