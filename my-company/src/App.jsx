@@ -39,7 +39,7 @@ import Contact from './Contact';
 import Service from './Service';
 import Navbar from './Navbar';
 
-const App = () => {
+const app = () => {
   return (
     <BrowserRouter>
     <Navbar />
