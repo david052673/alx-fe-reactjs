@@ -2,8 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {useAddRecipeForm} from './RecipeForm'
-import {useRecipeList} from '/RecipeList'
+import {AddRecipeForm} from './RecipeForm'
+import {RecipeList} from '/RecipeList'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,8 +31,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-    </useRecipeList >
-    </useAddRecipeForm >
+    </RecipeList >
+    </AddRecipeForm >
   )
 }
 
