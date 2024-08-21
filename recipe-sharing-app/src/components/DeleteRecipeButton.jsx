@@ -1,8 +1,10 @@
 import React from 'react';
+import { useRecipeStore } from './recipeStore';
 
-const DeleteRecipeButton = ({ onDelete }) => {
+
+const DeleteRecipeButton = ({ deleteRecipe }) => {
   return (
-    <button onClick={onDelete}>Delete</button>
+    <button onClick={deleteRecipe}>Delete</button>
   );
 };
 
