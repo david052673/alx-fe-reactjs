@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {userecipeStore} from './recipeStore'
+import {useRecipeStore} from './recipeStore'
 
 const EditRecipeForm = ({ recipe, onSave, onCancel }) => {
   const [name, setName] = useState(recipe.name);
-  const [ingredients, setIngredients] = useState(userecipeStore);
+  const [ingredients, setIngredients] = useState(useRecipeStore);
 
   const handleSubmit = (e) => {
     event.preventDefault();
