@@ -22,7 +22,7 @@ const RecipeList = () => {
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
-  link to </recipeStore>
+  Link to </recipeStore>
   return (
     <div>
       <input 
