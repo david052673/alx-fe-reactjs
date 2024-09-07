@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TodoLIst from './components.jsx/TodoList';
+
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
     </>
     
   )
-  <Todolist>
+
 }
 
 
