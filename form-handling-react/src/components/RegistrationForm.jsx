@@ -17,7 +17,6 @@ const RegistrationForm = () => {
       setErrors(formErrors);
   
       if (Object.keys(formErrors).length === 0) {
-        // Handle form submission logic here
         console.log('Form submitted:', { username, email, password });
       }
     };

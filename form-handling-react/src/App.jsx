@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react';
 import RegistrationForm from './components/RegistrationForm';
+import FormikForm from './components/FormikForm';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,7 +34,8 @@ function App() {
     </>
     
   )}
-  <Registrationform />
+  <Registrationform />,
+  <formikForm />
 
 
 export default App
