@@ -1,4 +1,4 @@
-import useState from 'react'
+import {useState} from 'react';
 import react from 'react'
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
