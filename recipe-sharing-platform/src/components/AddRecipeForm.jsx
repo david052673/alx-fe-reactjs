@@ -57,6 +57,20 @@ const AddRecipeForm = () => {
       </button>
     </form>
   );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!title || !ingredients || !steps) {
+      alert('All fields are required!');
+      return;
+    }
+  
+    const ingredientsList = ingredients.split(',').map(item => item.trim());
+    if (ingredientsList.length < 2) {
+      alert('Please include at least two ingredients.');
+      return;
+    }
+};
 };
 
 export default AddRecipeForm;
