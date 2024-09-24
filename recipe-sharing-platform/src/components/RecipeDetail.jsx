@@ -17,6 +17,8 @@ const RecipeDetail = () => {
   if (!recipe) {
     return <div>Loading...</div>;
   }
+  useParams
+  
 
   return (
     <div className="container mx-auto p-4">
