@@ -4,10 +4,24 @@ const AddRecipeForm = () => {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [steps, setSteps] = useState('');
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form submission logic here
+    // Validation logic here
+    if (validateForm()) {
+      // Submit form data
+      console.log({ title, ingredients, steps });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!title) newErrors.title = 'Title is required';
+    if (!ingredients) newErrors.ingredients = 'Ingredients are required';
+    if (!steps) newErrors.steps = 'Preparation steps are required';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   return (
@@ -22,8 +36,8 @@ const AddRecipeForm = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          required
         />
+        {errors.title && <p className="text-red-500 text-xs italic">{errors.title}</p>}
       </div>
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="ingredients">
@@ -34,8 +48,8 @@ const AddRecipeForm = () => {
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          required
         />
+        {errors.ingredients && <p className="text-red-500 text-xs italic">{errors.ingredients}</p>}
       </div>
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="steps">
@@ -46,31 +60,19 @@ const AddRecipeForm = () => {
           value={steps}
           onChange={(e) => setSteps(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          required
         />
+        {errors.steps && <p className="text-red-500 text-xs italic">{errors.steps}</p>}
       </div>
-      <button
-        type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-      >
-        Add Recipe
-      </button>
+      <div className="flex items-center justify-between">
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Add Recipe
+        </button>
+      </div>
     </form>
   );
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!title || !ingredients || !steps) {
-      alert('All fields are required!');
-      return;
-    }
-  
-    const ingredientsList = ingredients.split(',').map(item => item.trim());
-    if (ingredientsList.length < 2) {
-      alert('Please include at least two ingredients.');
-      return;
-    }
-};
 };
 
-export default AddRecipeForm;
+export default AddRecipeForm
