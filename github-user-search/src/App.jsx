@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import Seacrh from './components/Search.'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -31,9 +31,10 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <p>My name is David</p>
+      
       </>
-  )
+  )};
+  <Search>
 
-}
 
 export default App
